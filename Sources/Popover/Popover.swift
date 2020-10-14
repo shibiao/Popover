@@ -83,7 +83,7 @@ public class Popover: NSObject {
     /// Creates a Popover with given view and contentViewController. The view's height will be scaled down to 18pt and also will be vertically aligned. The wdith can be any.
     ///
     /// By default it won't present any Popover until the user clicks on status bar item
-    public func prepare(with view: NSView, contentViewController viewController: NSViewController) {
+    @objc public func prepare(with view: NSView, contentViewController viewController: NSViewController) {
         configureStatusBarButton(with: view)
         popoverWindowController = PopoverWindowController(with: self, contentViewController: viewController, windowConfiguration: wConfig)
         
