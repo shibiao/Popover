@@ -6,7 +6,7 @@ final class PopoverTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(Popover().text, "Hello, World!")
+//        XCTAssertEqual(Popover().text, "Hello, World!")
     }
 
     static var allTests = [
