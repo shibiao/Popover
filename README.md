@@ -6,4 +6,5 @@ A description of this package.
 
 使用方法 和 https://github.com/shibiao/Popover 里swift packages一样，
 新添加了对已存在的NSStatusItem的嵌入方法 ,而非由Popover底层创建
+
 ` public func prepare(with statusItem: NSStatusItem, contentViewController viewController: NSViewController) `
