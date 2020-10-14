@@ -57,7 +57,7 @@ class PopoverWindowController: NSWindowController, NSWindowDelegate {
 
     private func visibleStatusItemWindowFrame() -> (frame: NSRect, arrowXLocation: CGFloat) {
         let screenFrame = currentMouseScreen().frame
-        let statusItemRect = popover.item.button?.window?.frame ?? .zero
+        let statusItemRect = popover.item.view?.window?.frame ?? .zero
 
         guard let window = self.window else { return (.zero, 0.0) }
 

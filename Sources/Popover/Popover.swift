@@ -83,10 +83,15 @@ public class Popover: NSObject {
     /// Creates a Popover with given view and contentViewController. The view's height will be scaled down to 18pt and also will be vertically aligned. The wdith can be any.
     ///
     /// By default it won't present any Popover until the user clicks on status bar item
-    @objc public func prepare(with view: NSView, contentViewController viewController: NSViewController) {
+    public func prepare(with view: NSView, contentViewController viewController: NSViewController) {
         configureStatusBarButton(with: view)
         popoverWindowController = PopoverWindowController(with: self, contentViewController: viewController, windowConfiguration: wConfig)
         
+    }
+    
+    public func prepare(with statusItem: NSStatusItem, contentViewController viewController: NSViewController) {
+        item = statusItem
+        popoverWindowController = PopoverWindowController(with: self, contentViewController: viewController, windowConfiguration: wConfig)
     }
 
     /// Shows the Popover with no animation
@@ -117,7 +122,6 @@ public class Popover: NSObject {
         globalEventMonitor = EventMonitor(monitorType: .global, mask: [.leftMouseDown, .rightMouseDown], globalHandler: { [weak self] _ in
             guard let self = self else { return }
             self.dismiss()
-            
         }, localHandler: nil)
 
         localEventMonitor = EventMonitor(monitorType: .local, mask: [.leftMouseDown, .rightMouseDown], globalHandler: nil, localHandler: { [weak self] event -> NSEvent? in
