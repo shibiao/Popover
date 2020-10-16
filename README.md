@@ -8,3 +8,22 @@ A description of this package.
 新添加了对已存在的NSStatusItem的嵌入方法 ,而非由Popover底层创建
 
 ` public func prepare(with statusItem: NSStatusItem, contentViewController viewController: NSViewController) `
+
+# Install
+
+Since this is a Swift Package, the installation process is pretty stright forward.
+
+### Manual way
+Update your `Package.swift` dependencies:
+
+```
+dependencies: [
+    .package(url: "https://github.com/shibiao/Popover", from: "1.4.0")
+]
+```
+
+### Via Xcode:
+1. Go to `File -> Swift Packages -> Add Package Dependency`. 
+2. Put GitHub URL `https://github.com/shibiao/Popover` and click `Next`
+3. Select the latest version
+4. Click `Finish`
